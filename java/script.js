@@ -2,8 +2,6 @@
 
 
 
-
-//  Global Counters 
 let heartCount = 0;
 let copyCount = 0;
 let coinCount = 100;
