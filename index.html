@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Emergency Service</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
    <!-- Header -->
@@ -23,17 +20,17 @@
 
       <div class="flex flex-wrap md:flex-row gap-2 md:gap-4 items-center">
         <div class="flex items-center gap-2 bg-green-100 rounded-full px-3 py-1">
-          <span class="text-sm font-medium">0</span>
+          <span id="heart-count" class="text-sm font-medium">0</span>
           <img src="./assets/heart.png" alt="Heart" class="w-5 h-5">
         </div>
 
         <div class="flex items-center gap-2 bg-green-100 rounded-full px-3 py-1">
-          <span class="text-sm font-medium">100</span>
+          <span id="coin-count" class="text-sm font-medium">100</span>
           <img src="./assets/coin.png" alt="Coin" class="w-5 h-5">
         </div>
 
-        <button class="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium hover:bg-green-700">
-          2 Copy
+        <button id="copy-count-btn" class="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium hover:bg-green-700">
+          0 Copy
         </button>
       </div>
     </div>
@@ -48,209 +45,207 @@
     </p>
   </section>
 
-  <!-- Main Content: Cards + Call History -->
   <div class="bg-[#DFEFFF] py-8">
     <section class="p-4 md:p-9 w-full md:w-11/12 mx-auto">
-
-      <!-- Desktop: two-column layout -->
       <div class="flex flex-col md:flex-row gap-6">
 
         <!-- Cards grid -->
         <div class="flex-1 order-2 md:order-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
+          <!-- Cards 1 to 9 -->
           <!-- Card 1 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card1" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart1" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">National Emergency Number</h1>
             <p class="text-gray-500">National Emergency</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">999</h1>
+            <h1 id="number1" class="text-3xl md:text-4xl font-extrabold">999</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">All</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy1" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call1" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card2" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
-              <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <img src="./assets/police.png" alt="Icon" class="w-6 h-6">
+              <button id="heart2" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Police Helpline Number</h1>
             <p class="text-gray-500">Police</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">999</h1>
+            <h1 id="number2" class="text-3xl md:text-4xl font-extrabold">999</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Police</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy2" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call2" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card3" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
-              <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <img src="./assets/fire-service.png" alt="Icon" class="w-6 h-6">
+              <button id="heart3" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Fire Service Number</h1>
             <p class="text-gray-500">Fire Service</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">999</h1>
+            <h1 id="number3" class="text-3xl md:text-4xl font-extrabold">999</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Fire</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy3" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call3" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card4" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
-              <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <img src="./assets/ambulance.png" alt="Icon" class="w-6 h-6">
+              <button id="heart4" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Ambulance Service</h1>
             <p class="text-gray-500">Ambulance</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">145-999</h1>
+            <h1 id="number4" class="text-3xl md:text-4xl font-extrabold">145-999</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Health</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy4" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call4" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 5 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card5" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart5" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Women & Child Help Line</h1>
             <p class="text-gray-500">Women & Child Help Line</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">911</h1>
+            <h1 id="number5" class="text-3xl md:text-4xl font-extrabold">911</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Help</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy5" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call5" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 6 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card6" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart6" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Anti-corruption Helpline</h1>
             <p class="text-gray-500">Anti-corruption</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">106</h1>
+            <h1 id="number6" class="text-3xl md:text-4xl font-extrabold">106</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Govt</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy6" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call6" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 7 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card7" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart7" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Electricity Helpline</h1>
             <p class="text-gray-500">Electricity Outage</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">865</h1>
+            <h1 id="number7" class="text-3xl md:text-4xl font-extrabold">865</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Electricity</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy7" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call7" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 8 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card8" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart8" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Brac Helpline</h1>
             <p class="text-gray-500">BRAC</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">7895567</h1>
+            <h1 id="number8" class="text-3xl md:text-4xl font-extrabold">7895567</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">NGO</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy8" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call8" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
 
           <!-- Card 9 -->
-          <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
+          <div id="card9" class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center">
               <img src="./assets/emergency.png" alt="Icon" class="w-6 h-6">
-              <button class="p-2 rounded-full hover:bg-gray-200">
+              <button id="heart9" class="p-2 rounded-full hover:bg-gray-200">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
             <h1 class="text-xl md:text-2xl font-bold">Bangladesh Railway Helpline</h1>
             <p class="text-gray-500">Bangladesh Railway</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold">165</h1>
+            <h1 id="number9" class="text-3xl md:text-4xl font-extrabold">165</h1>
             <span class="inline-block px-2 py-0.5 rounded-xl text-sm font-medium">Travel</span>
             <div class="flex flex-col sm:flex-row gap-2 mt-4">
-              <button class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
+              <button id="copy9" class="flex-1 bg-white border px-4 py-2 rounded-lg hover:bg-gray-400 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
-              <button class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
+              <button id="call9" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
@@ -258,26 +253,25 @@
 
         </div>
 
-        
-<!-- History -->
-       
-<div class="md:w-1/4 order-1 md:order-2">
-  <div class="bg-white p-6 rounded-xl flex flex-col md:min-h-[600px]">
-   
-    <div class="flex justify-between items-center mb-4">
-      <h1 class="text-lg font-bold flex items-center gap-2">
-        <i class="fa-regular fa-clock"></i> Call History
-      </h1>
-      <button id="clear-history" class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium hover:bg-green-700">
-        Clear
-      </button>
-    </div>
+        <!-- History Section -->
+        <div class="md:w-1/4 order-1 md:order-2">
+          <div class="bg-white p-6 rounded-xl flex flex-col md:min-h-[600px]">
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-lg font-bold flex items-center gap-2">
+                <i class="fa-regular fa-clock"></i> Call History
+              </h1>
+              <button id="clear-history" class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium hover:bg-green-700">
+                Clear
+              </button>
+            </div>
+            <div id="call-history-list" class="flex flex-col gap-1"></div>
+          </div>
+        </div>
 
+      </div>
+    </section>
   </div>
-</div>
 
-
-
-
+  <script src="./java/script.js"></script>
 </body>
 </html>
